@@ -1,10 +1,11 @@
 package com.example.Exampleauthsecurity.repositories;
 
 import com.example.Exampleauthsecurity.entities.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface UserRepository extends MasterEntityRepository<User> {
+public interface UserRepository extends JpaRepository<User,Long> {
 
     Optional<User> findByUsernameOrEmail(String username, String email);
 
